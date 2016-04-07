@@ -1,5 +1,6 @@
 #include "Slav.h"
 #include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -18,12 +19,21 @@ void Slav::init()
 
 Slav::Slav()
 {
-	static int amountOfNames = (init(), names.size());
+	static int amountOfNames = (init(), names.size()); //leniwa inicjalizacja
+	//dzieki "static" wykona sie tylko raz, ale inicjalizacja nastąpi
+	//dopiero w momencie pierwszego użycia obiektu
+
 	_name = names[rand() % amountOfNames];
 	_id = _counter++;
+
 }
 
 string Slav::description()
 {
 	return string("  ") + _name + " [" + to_string(_id) + "]";
+}
+
+ _sex Slav::sex()
+{
+	return (_name[_name.length()-1] == 'a' ? female : male);
 }

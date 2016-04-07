@@ -1,8 +1,13 @@
-#pragma once
+#pragma once	
 #include <string>
 #include <vector>
 
 using namespace std;
+
+enum _sex
+{
+	male, female
+};
 
 class Slav
 {
@@ -15,6 +20,7 @@ private:
 	string _name;
 	int _id;
 
+
 public:
 	Slav();
 
@@ -24,4 +30,5 @@ public:
 	int id() { return _id; }
 
 	string description();
+	_sex sex();
 };
